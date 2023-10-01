@@ -1,0 +1,59 @@
+{% extends 'employee_base.html' %}
+{% load static %}
+{% block main %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Events</title>
+    <link rel="stylesheet" href="{% static 'css/employee_events.css' %}">
+</head>
+<body>
+    <h1>Employee Events</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Date</th>
+                <th>Venue</th>
+                <th>Description</th>
+                <th>Certificate</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+            <tr>
+                <td>{{ event.event_name }}</td>
+                <td>{{ event.date }}</td>
+                <td>{{ event.venue }}</td>
+                <td>{{ event.description }}</td>
+                <td>
+                    {% if event.certificate %}
+                        <a href="{{ event.certificate.url }}" target="_self">View Certificate</a>
+                    {% else %}
+                        No certificate available
+                    {% endif %}
+                </td>
+                <td><a href="{% url 'edit-event' event.id %}">Edit</a></td>
+                <td>
+                    <form method="post" action="{% url 'event_delete' event.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                     </form>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7">No events available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'add-event' %}">Add Event</a>
+</body>
+</html>
+
+{% endblock %}
+

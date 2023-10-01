@@ -1,0 +1,79 @@
+{% extends 'employee_base.html'%}
+{% block main %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Profile Form</title>
+    <!-- Add your CSS styles here or link to an external CSS file -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Employee Profile Form</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="employeeId">Employee ID:</label>
+        <input type="text" id="employeeId" name="employeeId" required><br><br>
+        
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+        
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" required><br><br>
+        
+        <label for="aadhar">Aadhar Number:</label>
+        <input type="text" id="aadhar" name="aadhar" required><br><br>
+        
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select><br><br>
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+        
+        <label for="currentAddress">Current Address:</label>
+        <textarea id="currentAddress" name="currentAddress" required></textarea><br><br>
+        
+        <label for="residentialAddress">Residential Address:</label>
+        <textarea id="residentialAddress" name="residentialAddress" required></textarea><br><br>
+        
+        <label for="dateOfJoining">Date of Joining:</label>
+        <input type="date" id="dateOfJoining" name="dateOfJoining" required><br><br>
+        
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" name="salary" required><br><br>
+        
+        <label for="cv">CV:</label>
+        <input type="file" id="cv" name="cv" required><br><br>
+        
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" required><br><br>
+        
+        <label for="status">Status:</label>
+        <select id="status" name="status" required> 
+            <option value="working">Working</option>
+            <option value="leave">Leave</option>
+            <option value="retire">Retire</option>
+            <option value="transfer">Transfer</option>
+        </select><br><br>
+        
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
+
+{% endblock%}

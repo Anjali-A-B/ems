@@ -1,0 +1,62 @@
+{% extends 'employee_base.html' %}
+{% block main %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Application</title>
+</head>
+<body>
+    <header>
+        <h1>Leave Application</h1>
+    </header>
+
+    <div class="content">
+        <h2>Apply for Leave</h2>
+        <form id="leaveForm" method="post" action="{% url 'leave_request' %}">
+            {% csrf_token %}
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" required><br>
+
+            <label for="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date" required><br>
+
+            <label for="leave_type">Leave Type:</label>
+            <select id="leave_type" name="leave_type" required>
+                <option value="sick">Sick Leave</option>
+                <option value="vacation">Vacation Leave</option>
+                <!-- Add more leave types as needed -->
+            </select><br>
+
+            <label for="reason">Reason:</label>
+            <textarea id="reason" name="reason" rows="4" required></textarea><br>
+
+            <button type="submit">Send Request</button>
+        </form>
+        
+        <div id="message" style="display: none;">
+            
+        </div>
+    </div>
+
+    <script>
+        // Function to fetch data from the view
+        function fetchMessage() {
+            fetch('{% url 'leave_request' %}')  // Adjust the URL as needed
+                .then(response => response.json())
+                .then(data => {
+                    // Display the message in the "message" div
+                    var messageDiv = document.getElementById('message');
+                    messageDiv.textContent = data.message;
+                    messageDiv.style.display = 'block'; // Show the message div
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+        window.addEventListener('load', fetchMessage);
+    </script>
+</body>
+</html>
+{% endblock%}

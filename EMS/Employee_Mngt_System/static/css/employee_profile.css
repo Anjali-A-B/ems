@@ -1,0 +1,120 @@
+/* Reset some default browser styles */
+body, h1, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color for the body */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header */
+h1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style the form container */
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px green;
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Style form elements */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="email"],
+.form-group input[type="file"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group select {
+    height: 38px; /* Adjust the height as needed */
+}
+
+/* Style the "Choose File" button */
+.file-upload-container {
+    display: flex;
+    align-items: center;
+}
+
+.file-upload-input {
+    display: none; /* Hide the default file input */
+}
+
+.file-upload-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+/* Center-align the "Save" button */
+.center-button {
+    text-align: center;
+}
+
+.center-button input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Style the "Save" button on hover */
+.center-button input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+body {
+    text-align: center;
+}
+
+button {
+    margin: 10px;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button.admin {
+    background-color: rgb(21, 190, 21);
+}
+
+button.employee {
+    background-color: #22A699;
+}

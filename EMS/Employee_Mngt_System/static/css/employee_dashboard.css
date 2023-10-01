@@ -1,0 +1,8 @@
+body{
+  background-color: white;
+}
+.list-group-item{
+    padding:8px;
+    text-align:center;
+    background-color: rgb(154, 224, 100);
+  }

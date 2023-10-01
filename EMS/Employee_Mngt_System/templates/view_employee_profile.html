@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Profile</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li strong {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        /* You can add more styles as needed */
+    </style>
+</head>
+<body>
+    <h1>Employee Profile</h1>
+    <ul>
+        <li><strong>Emp ID:</strong> {{ employee.emp_id }}</li>
+        <li><strong>First Name:</strong> {{ employee.first_name }}</li>
+        <li><strong>Last Name:</strong> {{ employee.last_name }}</li>
+        <li><strong>Department:</strong> {{ employee.department }}</li>
+        <li><strong>Email:</strong> {{ employee.email }}</li>
+        <li><strong>Mobile No:</strong> {{ employee.mobile_no }}</li>
+        <li><strong>Date of Birth:</strong> {{ employee.dob }}</li>
+        <li><strong>Gender:</strong> {{ employee.gender }}</li>
+        <li><strong>Country:</strong> {{ employee.country }}</li>
+        <li><strong>State:</strong> {{ employee.state }}</li>
+        <li><strong>District:</strong> {{ employee.district }}</li>
+        <li><strong>City:</strong> {{ employee.city }}</li>
+        <li><strong>Address:</strong> {{ employee.address }}</li>
+        <li><strong>Date of Joining:</strong> {{ employee.date_of_joining }}</li>
+        <li><strong>Salary:</strong> {{ employee.salary }}</li>
+    </ul>
+    <a href="{% url 'create_employee' %}">Edit Profile</a>
+</body>
+</html>

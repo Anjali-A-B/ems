@@ -1,0 +1,40 @@
+<!-- edit_profile.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <!-- Add your CSS links here -->
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Profile</h1>
+    <form method="post" action="{% url 'edit_profile' %}" onsubmit="return validateForm()">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p class="error-message" id="errorMessage"></p>
+        <button type="submit">Save Changes</button>
+    </form>
+    <a href="{% url 'profile' %}">Back to Profile</a>
+    
+    <!-- Add your JavaScript links here -->
+    <script>
+        function validateForm() {
+            var salary = document.getElementById("id_salary").value;
+            
+            if (isNaN(salary) || salary < 0) {
+                document.getElementById("errorMessage").innerHTML = "Please enter a valid salary.";
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
+</body>
+</html>

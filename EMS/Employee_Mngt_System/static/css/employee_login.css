@@ -1,0 +1,108 @@
+/* employee_login.css */
+body{
+    height: 100vh;
+    background: linear-gradient(
+        to top,
+        #abaaa3 0%,
+        #abaaa3 50%,
+        #045f51 50%,
+        #045f51 100%
+    );
+
+}
+
+h1 {
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 80px;
+    text-align: center;
+    margin-top: 100px;
+
+}
+
+.login-container {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px; 
+    padding: 20px; 
+    margin: 20px auto;
+    height:600px;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px; /* Reduce margin-bottom for less spacing */
+}
+
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 20px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top:20px;
+    margin-bottom: 10px;;
+}
+
+
+.messages {
+    list-style-type: none;
+    padding: 4px;
+    margin: 0;
+    background-color: #e60909;
+    color: #fff;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+
+.messages li {
+    margin: 1px;
+    padding: 1px;
+}
+p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+a:hover {
+    color: #45a049;
+}
+

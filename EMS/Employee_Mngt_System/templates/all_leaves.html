@@ -1,0 +1,30 @@
+<!-- templates/all_leaves.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Leaves</title>
+    <!-- Add CSS and JavaScript links here -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <h1>All Leaves</h1>
+    <!-- Filter dropdown -->
+    <label for="filter-status">Filter by Status:</label>
+    <select id="filter-status">
+        <option value="all">All</option>
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+    </select>
+    <ul>
+        {% for leave in leaves %}
+            <!-- Add a data-status attribute to each leave item -->
+            <li class="leave-item" data-status="{{ leave.status }}">
+                {{ leave.employee.user.username }} - {{ leave.leave_type }} ({{ leave.status }})
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

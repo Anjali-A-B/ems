@@ -1,0 +1,59 @@
+{% extends 'employee_base.html' %}
+{% block content %}
+<h1>Employee List</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th>Mobile Number</th>
+            <th>Aadhar Number</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Current Address</th>
+            <th>Residential Address</th>
+            <th>Date of Joining</th>
+            <th>Salary</th>
+            <th>CV</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee.employee_id }}</td>
+            <td>{{ employee.first_name }}</td>
+            <td>{{ employee.last_name }}</td>
+            <td>{{ employee.department }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.mobile_number }}</td>
+            <td>{{ employee.aadhar_number }}</td>
+            <td>{{ employee.gender }}</td>
+            <td>{{ employee.date_of_birth }}</td>
+            <td>{{ employee.current_address }}</td>
+            <td>{{ employee.residential_address }}</td>
+            <td>{{ employee.date_of_joining }}</td>
+            <td>{{ employee.salary }}</td>
+            <td>
+                {% if employee.cv %}
+                    <a href="{{ employee.cv.url }}" target="_blank">View CV</a>
+                {% else %}
+                    No CV available
+                {% endif %}
+            </td>
+            <td>{{ employee.status }}</td>
+            <td>
+                <a href="{% url 'employee_detail' employee.employee_id %}">View</a>
+                <a href="{% url 'edit_employee' employee.employee_id %}">Edit</a>
+                <a href="{% url 'delete_employee' employee.employee_id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'add_employee' %}">Add Employee</a>
+{% endblock %}

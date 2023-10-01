@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Event</title>
+    <link rel="stylesheet" href="{% static 'css/add_event.css' %}">
+</head>
+<body>
+    <h1>Add Event</h1>
+    <div class="msg">
+        {% if message %}
+        <h3>{{ message }}<h3>
+        {% endif %}
+    </div>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="Save Event">
+    </form>
+
+    <button class="events" onclick="location.href='{% url 'employee_events' %}'">Back to Events</button>
+    <!--Include jQuery and jQuery UI for the date picker -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+
+    <!-- Add a script to enable the date picker -->
+    <script>
+        $(function() {
+            // Assuming your date input field has the ID 'id_date'
+            $('#id_date').datepicker();
+        });
+    </script>
+</body>
+</html>
+
+
+
+

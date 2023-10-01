@@ -1,0 +1,41 @@
+<!-- employee_profile.html -->
+{% extends "employee_base.html" %}
+{% block main %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Profile</title>
+    <!--<link rel="stylesheet" href="{% static 'css/employee_profile.css' %}">-->
+</head>
+<body>
+    <h1>Employee Profile</h1>
+
+    {% if user_profile %}
+        <div>
+            <p><strong>Employee ID:</strong> {{ user_profile.employee_id }}</p>
+            <p><strong>First Name:</strong> {{ user_profile.first_name }}</p>
+            <p><strong>Last Name:</strong> {{ user_profile.last_name }}</p>
+            <p><strong>Email:</strong> {{ user_profile.email }}</p>
+            <p><strong>Phone Number:</strong> {{ user_profile.phone_number }}</p>
+            <p><strong>Aadhar Number:</strong> {{ user_profile.aadhar_number }}</p>
+            <p><strong>Department:</strong> {{ user_profile.department }}</p>
+            <p><strong>Gender:</strong> {{ user_profile.gender }}</p>
+            <p><strong>Date of Birth:</strong> {{ user_profile.date_of_birth }}</p>
+            <p><strong>Date of Joining:</strong> {{ user_profile.date_of_joining }}</p>
+            <p><strong>Current Address:</strong> {{ user_profile.current_address }}</p>
+            <p><strong>Residential Address:</strong> {{ user_profile.residential_address }}</p>
+            <p><strong>Status:</strong> {{ user_profile.status }}</p>
+            <p><strong>Salary:</strong> {{ user_profile.salary }}</p>
+            <!-- Add other fields as needed -->
+        </div>
+    {% else %}
+        <p>No profile found for this user.</p>
+    {% endif %}
+
+    <a href="{% url 'edit_profile' %}">Add Details</a>
+    <!-- Add your JavaScript links here -->
+</body>
+</html>
+{% endblock %}

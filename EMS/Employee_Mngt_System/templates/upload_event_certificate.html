@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Event Certificate</title>
+</head>
+<body>
+    <h1>Upload Event Certificate</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload Certificate</button>
+    </form>
+
+    <a href="{% url 'employee_events' %}">Back to Events</a>
+</body>
+</html>

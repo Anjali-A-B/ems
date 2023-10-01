@@ -1,0 +1,87 @@
+/* Style for employee_registration.css */
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #444;
+}
+
+button {
+    display: block;
+    margin-top: 10px;
+    background-color: #f4f4f4;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #45a049; /* Change the background color to match "Back to Login" */
+    color: #fff; /* Change the text color to white */
+}
+
+button:hover {
+    background-color: #4CAF50; /* Change the hover background color */
+}
+
+.messages {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    background-color: #e60909; /* Red background for error messages */
+    color: #fff;
+    border-radius: 4px;
+    text-align: center; /* Center the messages */
+}
+
+.messages li {
+    margin: 5px 0; /* Adjust margin as needed */
+    padding: 5px;
+    font-size: 14px;
+}

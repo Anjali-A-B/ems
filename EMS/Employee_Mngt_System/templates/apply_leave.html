@@ -1,0 +1,18 @@
+<!-- templates/apply_leave.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply Leave</title>
+    <!-- Add CSS and JavaScript links here -->
+</head>
+<body>
+    <h1>Apply for Leave</h1>
+    <form method="POST" action="{% url 'apply_leave' %}">
+        <!-- templates/apply_leave.html -->
+        {% csrf_token %}
+        {{ form.as_p }} <!-- Render the form fields -->
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

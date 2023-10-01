@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Profile</title>
+</head>
+<body>
+    <h1>Employee Profile</h1>
+    
+    <h2>Personal Information</h2>
+    <p>Employee ID: {{ employee.employee_id }}</p>
+    <p>First Name: {{ employee.first_name }}</p>
+    <p>Last Name: {{ employee.last_name }}</p>
+    <p>Department: {{ employee.department }}</p>
+    <p>Email: {{ employee.email }}</p>
+    <p>Mobile Number: {{ employee.mobile_number }}</p>
+    <p>Aadhar Number: {{ employee.aadhar_number }}</p>
+    <p>Gender: {{ employee.get_gender_display }}</p>
+    <p>Date of Birth: {{ employee.dob }}</p>
+    
+    <h2>Addresses</h2>
+    <p>Current Address: {{ employee.current_address }}</p>
+    <p>Residential Address: {{ employee.residential_address }}</p>
+    
+    <h2>Employment Information</h2>
+    <p>Date of Joining: {{ employee.date_of_joining }}</p>
+    <p>Salary: {{ employee.salary }}</p>
+    <p>Status: {{ employee.get_status_display }}</p>
+    
+    <h2>Attachments</h2>
+    <p>CV: <a href="{{ employee.cv.url }}" target="_blank">Download CV</a></p>
+    <p>Photo: <img src="{{ employee.photo.url }}" alt="Employee Photo" width="150"></p>
+    
+    <a href="{% url 'edit_profile' employee_id=employee.employee_id %}">Edit Profile</a>
+</body>
+</html>

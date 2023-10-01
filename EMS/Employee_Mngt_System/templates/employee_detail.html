@@ -1,0 +1,73 @@
+{% extends 'employee_base.html' %}
+{% block content %}
+<h1>Employee Detail</h1>
+<table>
+    <tr>
+        <th>Employee ID:</th>
+        <td>{{ employee.employee_id }}</td>
+    </tr>
+    <tr>
+        <th>First Name:</th>
+        <td>{{ employee.first_name }}</td>
+    </tr>
+    <tr>
+        <th>Last Name:</th>
+        <td>{{ employee.last_name }}</td>
+    </tr>
+    <tr>
+        <th>Department:</th>
+        <td>{{ employee.department }}</td>
+    </tr>
+    <tr>
+        <th>Email:</th>
+        <td>{{ employee.email }}</td>
+    </tr>
+    <tr>
+        <th>Mobile Number:</th>
+        <td>{{ employee.mobile_number }}</td>
+    </tr>
+    <tr>
+        <th>Aadhar Number:</th>
+        <td>{{ employee.aadhar_number }}</td>
+    </tr>
+    <tr>
+        <th>Gender:</th>
+        <td>{{ employee.gender }}</td>
+    </tr>
+    <tr>
+        <th>Date of Birth:</th>
+        <td>{{ employee.date_of_birth }}</td>
+    </tr>
+    <tr>
+        <th>Current Address:</th>
+        <td>{{ employee.current_address }}</td>
+    </tr>
+    <tr>
+        <th>Residential Address:</th>
+        <td>{{ employee.residential_address }}</td>
+    </tr>
+    <tr>
+        <th>Date of Joining:</th>
+        <td>{{ employee.date_of_joining }}</td>
+    </tr>
+    <tr>
+        <th>Salary:</th>
+        <td>{{ employee.salary }}</td>
+    </tr>
+    <tr>
+        <th>CV:</th>
+        <td>
+            {% if employee.cv %}
+                <a href="{{ employee.cv.url }}" target="_blank">View CV</a>
+            {% else %}
+                No CV available
+            {% endif %}
+        </td>
+    </tr>
+    <tr>
+        <th>Status:</th>
+        <td>{{ employee.status }}</td>
+    </tr>
+</table>
+<a href="{% url 'employee_list' %}">Back to Employee List</a>
+{% endblock %}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Profile</title>
+    <style>
+        .form-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .center-button {
+            text-align: center;
+        }
+
+        .file-upload-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 45%; /* Adjust the width as needed */
+            display: inline-block; /* Display them in a single row */
+            vertical-align: top; /* Align to the top */
+            margin-right: 50px; /* Add margin to create a gap */
+        }
+
+        .file-upload-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+
+        /* Adjust the width and color of the "Choose File" button */
+        .file-upload-button {
+            display: block;
+            background-color: #fff;
+            color: #000000;
+            padding: 3px 6px; /* Adjust the padding for smaller size */
+            border: none;
+            cursor: pointer;
+            font-size: 12px; /* Adjust the font size for smaller size */
+            width: 60px; /* Let the button adjust its width based on content */
+        }
+
+        /* Style for input fields */
+        input[type="text"],
+        input[type="email"],
+        select,
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50; /* Green color */
+            color: white;
+            padding: 15px 30px; /* Adjust the padding for a larger button */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top:20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-container">
+            <h1 style="text-align:center;">Profile</h1>
+            <div class="form-group">
+                <label for="{{ form.emp_id.id_for_label }}">Emp ID</label>
+                <input type="text" name="{{ form.emp_id.name }}" id="{{ form.emp_id.id_for_label }}" placeholder="Enter your Emp Id"><br>
+
+                <label for="{{ form.first_name.id_for_label }}">First Name</label>
+                <input type="text" name="{{ form.first_name.name }}" id="{{ form.first_name.id_for_label }}" placeholder="Enter your First Name">
+
+                <label for="{{ form.last_name.id_for_label }}">Last Name</label>
+                <input type="text" name="{{ form.last_name.name }}" id="{{ form.last_name.id_for_label }}" placeholder="Enter your Last Name"><br>
+
+                <label for="{{ form.department.id_for_label }}">Department:</label>
+                <select name="{{ form.department.name }}" id="{{ form.department.id_for_label }}" placeholder="--select--">
+                    <option value="physics">Physics</option>
+                    <option value="maths">Mathematics</option>
+                    <option value="cs">Computer Science</option>
+                    <option value="chemistry">Chemistry</option>
+                    <option value="economics">Economics</option>
+                    <option value="history">History</option>
+                    <option value="politics">Politics</option>
+                    <option value="english">English</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="malayalam">Malayalam</option>
+                    <option value="sanskrit">Sanskrit</option>
+                    <option value="botany">Botany</option>
+                    <option value="statistics">Statistics</option>
+                    <option value="zoology">Zoology</option>
+                    <option value="commerce">Commerce</option>
+                    <option value="physical education">Physical Education</option>
+                </select>
+
+                <label for="{{ form.email.id_for_label }}">Email</label>
+                <input type="email" name="{{ form.email.name }}" id="{{ form.email.id_for_label }}" placeholder="Enter your Email ID"><br>
+
+                <label for="{{ form.mobile_no.id_for_label }}">Mobile No</label>
+                <input type="text" name="{{ form.mobile_no.name }}" id="{{ form.mobile_no.id_for_label }}" placeholder="Enter your Mobile No">
+
+                <label for="{{ form.dob.id_for_label }}">Date of Birth:</label>
+                <input type="date" name="{{ form.dob.name }}" id="{{ form.dob.id_for_label }}" placeholder="dd-mm-yyyy"><br>
+
+                <label for="{{ form.gender.id_for_label }}">Gender:</label>
+                <select name="{{ form.gender.name }}" id="{{ form.gender.id_for_label }}" placeholder="--select--">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="{{ form.country.id_for_label }}">Country</label>
+                <input type="text" name="{{ form.country.name }}" id="{{ form.country.id_for_label }}" placeholder="Enter your Country"><br>
+
+                <label for="{{ form.state.id_for_label }}">State</label>
+                <input type="text" name="{{ form.state.name }}" id="{{ form.state.id_for_label }}" placeholder="Enter your State">
+
+                <label for="{{ form.district.id_for_label }}">District</label>
+                <input type="text" name="{{ form.district.name }}" id="{{ form.district.id_for_label }}" placeholder="Enter your District"><br>
+
+                <label for="{{ form.city.id_for_label }}">City</label>
+                <input type="text" name="{{ form.city.name }}" id="{{ form.city.id_for_label }}" placeholder="Enter your City">
+
+                <label for="{{ form.address.id_for_label }}">Address</label>
+                <input type="text" name="{{ form.address.name }}" id="{{ form.address.id_for_label }}" placeholder="Enter your Address"><br>
+
+                <label for="{{ form.date_of_joining.id_for_label }}">Date of Joining:</label>
+                <input type="date" name="{{ form.date_of_joining.name }}" id="{{ form.date_of_joining.id_for_label }}" placeholder="dd-mm-yyyy">
+
+                <label for="{{ form.salary.id_for_label }}">Salary</label>
+                <input type="text" name="{{ form.salary.name }}" id="{{ form.salary.id_for_label }}" placeholder="Enter your Salary"><br>
+
+                <div class="file-upload-container">
+                    <label for="{{ form.photo.id_for_label }}">Photo</label>
+                    <input type="file" name="{{ form.photo.name }}" id="{{ form.photo.id_for_label }}" placeholder="No file chosen", class="file-upload-input">
+                    <label class="file-upload-button" for="{{ form.photo.id_for_label }}">Choose File</label>
+                </div>
+                <div class="file-upload-container">
+                    <label for="{{ form.cv.id_for_label }}">CV</label>
+                    <input type="file" name="{{ form.cv.name }}" id="{{ form.cv.id_for_label }}" placeholder="No file chosen", class="file-upload-input">
+                    <label class="file-upload-button" for="{{ form.cv.id_for_label }}">Choose File</label>
+                </div>
+                <div class="center-button">
+                    <input type="submit" value="Save">
+                </div>
+            </div>
+        </div>
+    </form>
+    
+</body>
+</html>

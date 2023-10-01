@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Employee Management System</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <div style="text-align: center; display:block;">
+            <img src="{% static 'images/image.jpg' %}" alt="demo_image">
+        </div>
+        <h1 style="color:red; text-align:center; font-size:50px; margin-top:-20px;"><b>Employee Management System</b></h1>
+        <button class="admin" onclick="location.href='{% url 'admin_login' %}'">Admin</button>
+        <button class="employee" onclick="location.href='{% url 'employee_login' %}'">Employee</button>
+
+
+    </body> 
+</html>

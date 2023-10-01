@@ -1,0 +1,23 @@
+
+body {
+    text-align: center;
+}
+
+button {
+    margin: 10px;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button.admin {
+    background-color: rgb(21, 190, 21);
+}
+
+button.employee {
+    background-color: #22A699;
+}
